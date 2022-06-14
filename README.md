@@ -6,7 +6,7 @@ python play_tictactoe_qlearning.py
 python play_tictactoe_ddqn.py  
 
 ## 算法介绍
-Q-Learning：
+Q-Learning：  
 1、将棋盘board哈希成编号（0 - 19682），创建一个19683 * 9的Q表格，表示在board情况下走action后可获得的回报期望；  
 2、创建一个19683 * 9的动作次数表，记录在board情况下选择走action的次数；  
 3、创建两个AI玩家，其中一个永远选择Q值最大的action，另一个有epsilon概率选择尝试次数最少的action，其他情况同样选择Q值最大的action，epsilon可以随着游戏轮数从1下降到0.2；  
@@ -14,7 +14,7 @@ Q-Learning：
 5、根据Q-Learning更新规则更新Q表，不过在井字棋中Q目标要取负号，因为对手会选择Q值最大的action但对于我方是Q值最小的；  
 6、在随机先手情况下循环训练50000场游戏，大约在30000场时1号AI就已经处于不败地位，训练结束。
 
-DQN：
+DQN：  
 1、将棋盘改为独热格式，即3 * 3 * 3；  
 2、搭建DQN网络，创建两个AI玩家，使用同一个网络，一个永远选择Q值最大的action，另一个有epsilon概率随机选择，其余情况同样选择Q值最大的action，epsilon随游戏轮数从1下降到0.2；  
 3、和Q-Learning一样，将棋盘翻转后再交给另一个AI进行选择；  
